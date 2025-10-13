@@ -86,7 +86,7 @@ const Portfolio = () => {
 
   const handleViewDetails = () => {
     toast({
-      title: "🚧 Fitur ini belum diimplementasikan—tapi jangan khawatir! Anda bisa memintanya di prompt berikutnya! 🚀"
+      title: "🚧 Fitur ini sedang dalam tahap pengembangan untuk meningkatkan kualitas layanan kami. 🚀"
     });
   };
 
