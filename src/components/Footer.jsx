@@ -4,6 +4,7 @@ import { MapPin, Phone, Mail, Instagram, Youtube } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../logo.jpg'; // pastikan file ada di src/logo.jpg
 
+// ✅ Ikon TikTok dengan path SVG lengkap
 const TikTokIcon = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +14,7 @@ const TikTokIcon = (props) => (
     fill="currentColor"
     {...props}
   >
-    <path d="M12.525.02c1.31-.02 2.61-.01 3.91.02..." />
+    <path d="M12.065 2c.406 1.37 1.56 3.07 3.224 3.17v2.62a6.08 6.08 0 0 1-3.221-.89v6.08a4.2 4.2 0 1 1-4.2-4.2c.22 0 .43.02.64.06v2.7a1.49 1.49 0 1 0 1.49 1.49V2h2.07Zm5.33 2.25c-.34-.24-.66-.52-.95-.84-.7-.78-1.06-1.61-1.23-2.39h2.09c.13.56.45 1.11.94 1.57.25.23.53.44.82.61v1.05a5.9 5.9 0 0 1-1.77-.01Z" />
   </svg>
 );
 
@@ -68,7 +69,6 @@ const Footer = () => {
             className="space-y-4"
           >
             <div className="flex items-center space-x-3">
-              {/* ✅ LOGO DIBENERIN */}
               <div className="w-12 h-12 rounded-full p-[2px] bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center shadow-[0_0_15px_rgba(250,204,21,0.15)]">
                 <div className="w-full h-full rounded-full overflow-hidden bg-black/0 flex items-center justify-center">
                   <img
