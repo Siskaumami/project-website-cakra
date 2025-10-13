@@ -31,7 +31,10 @@ const Contact = () => {
   const mapRef = useRef(null);
   const location = useLocation();
   const SIDOARJO_COORDS = [-7.3492, 112.7201];
-  const phoneNumber = "6288211699073"; // format WA valid (tanpa +, spasi, strip)
+
+  // Pisahkan untuk tampilan dan link WA
+  const phoneDisplay = "+62 815-1512-5277"; 
+  const phoneNumber = "6281515125277"; // format WA valid (tanpa +, spasi, atau strip)
 
   useEffect(() => {
     if (location.state?.scrollToMap && mapRef.current) {
@@ -49,7 +52,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Telepon',
-      details: ['+62 882-1169-9073', 'WhatsApp Available'],
+      details: [phoneDisplay, 'WhatsApp Available'],
       color: 'text-green-400'
     },
     {
@@ -221,7 +224,7 @@ Pesan: ${message}`;
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-white placeholder-gray-400"
-                      placeholder="+62 882-1169-9073"
+                      placeholder={phoneDisplay}
                     />
                   </div>
                   <div>
