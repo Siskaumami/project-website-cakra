@@ -52,9 +52,7 @@ const CakraXperience = () => {
       icon: '🚀',
       image: 'Modern stage lighting setup with GrandMA3 software interface',
       description: 'Kuasai teknologi lighting terbaru dengan pengenalan dasar software GrandMA3 yang menjadi standar masa depan industri.',
-      curriculum: [
-        'Pengenalan basic software GrandMA 3'
-      ]
+      curriculum: ['Pengenalan basic software GrandMA 3']
     },
     {
       level: 5,
@@ -62,10 +60,7 @@ const CakraXperience = () => {
       icon: '🎨',
       image: '3D visualization of a stage lighting design on a computer screen',
       description: 'Visualisasikan desain lighting Anda secara real-time dengan software 3D MA dan Capture, alat wajib bagi desainer profesional.',
-      curriculum: [
-        'Pengenalan 3D MA software',
-        'Pengenalan Capture software'
-      ]
+      curriculum: ['Pengenalan 3D MA software', 'Pengenalan Capture software']
     }
   ];
 
@@ -127,18 +122,9 @@ const CakraXperience = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              {
-                icon: Zap,
-                title: 'Memahami Kelistrikan Lighting',
-              },
-              {
-                icon: Lightbulb,
-                title: 'Memahami Jenis Lighting dan Pengaplikasian di Stage',
-              },
-              {
-                icon: HardHat,
-                title: 'Memahami berbagai jenis software lighting & lighting Console',
-              }
+              { icon: Zap, title: 'Memahami Kelistrikan Lighting' },
+              { icon: Lightbulb, title: 'Memahami Jenis Lighting dan Pengaplikasian di Stage' },
+              { icon: HardHat, title: 'Memahami berbagai jenis software lighting & lighting Console' }
             ].map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -188,9 +174,14 @@ const CakraXperience = () => {
                     <img
                       className="w-full h-auto rounded-2xl shadow-2xl gold-glow"
                       alt={cls.image}
-                     src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
+                      src="https://images.unsplash.com/photo-1595872018818-97555653a011"
+                    />
                   </div>
-                   <div className={`absolute -top-4 w-full h-full bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-2xl -z-10 ${index % 2 === 0 ? '-right-4' : '-left-4'}`} />
+                  <div
+                    className={`absolute -top-4 w-full h-full bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-2xl -z-10 ${
+                      index % 2 === 0 ? '-right-4' : '-left-4'
+                    }`}
+                  />
                 </div>
 
                 <div className={`space-y-6 order-2 ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
@@ -203,7 +194,9 @@ const CakraXperience = () => {
                       <h3 className="text-3xl font-bold font-display text-gradient">{cls.title}</h3>
                     </div>
                   </div>
+
                   <p className="text-gray-300 leading-relaxed">{cls.description}</p>
+
                   <div className="space-y-3">
                     {cls.curriculum.map((item, i) => (
                       <div key={i} className="flex items-start space-x-3">
@@ -212,21 +205,33 @@ const CakraXperience = () => {
                       </div>
                     ))}
                   </div>
-                  <Link to="/contact">
-                    <Button
-                      className="bg-transparent border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300"
-                    >
-                      Daftar Kelas Ini
-                    </Button>
-                  </Link>
+
+                  {/* WhatsApp Button Fixed */}
+                  {(() => {
+                    const waText = `Halo Cakra, Saya ingin mendaftar Cakra Xperience kelas ${cls.level}.
+Untuk pelaksanaannya tanggal berapa?
+`;
+
+                    return (
+                      <a
+                        href={`https://wa.me/6288211699073?text=${encodeURIComponent(waText)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button className="mt-6 bg-transparent border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300">
+                          Daftar Kelas Ini
+                        </Button>
+                      </a>
+                    );
+                  })()}
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
-      
-       {/* Mentors Section */}
+
+      {/* Mentors Section */}
       <section className="py-20 bg-gradient-to-r from-gray-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -238,7 +243,7 @@ const CakraXperience = () => {
             <h2 className="text-4xl md:text-5xl font-bold font-display">
               Meet Our <span className="text-gradient">Mentors</span>
             </h2>
-             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Belajar langsung dari para ahli yang telah menangani ratusan event dan konser berskala nasional.
             </p>
           </motion.div>
@@ -253,10 +258,11 @@ const CakraXperience = () => {
                 className="text-center space-y-4"
               >
                 <div className="relative w-40 h-40 mx-auto">
-                    <img
-                      className="w-full h-full rounded-full object-cover border-4 border-yellow-400 gold-glow"
-                      alt={mentor.image}
-                     src="https://images.unsplash.com/photo-1534298435681-3fd5153b0b7c" />
+                  <img
+                    className="w-full h-full rounded-full object-cover border-4 border-yellow-400 gold-glow"
+                    alt={mentor.image}
+                    src="https://images.unsplash.com/photo-1534298435681-3fd5153b0b7c"
+                  />
                 </div>
                 <h3 className="text-2xl font-bold text-gradient font-display">{mentor.name}</h3>
                 <p className="text-yellow-400 font-semibold">{mentor.title}</p>
@@ -282,11 +288,10 @@ const CakraXperience = () => {
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Jangan lewatkan kesempatan untuk belajar dan berkarir di industri event. Daftarkan diri Anda sekarang!
             </p>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact">
-                <Button
-                  className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-semibold px-8 py-6 text-lg hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300 gold-glow"
-                >
+                <Button className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-semibold px-8 py-6 text-lg hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300 gold-glow">
                   Daftar Sekarang
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
